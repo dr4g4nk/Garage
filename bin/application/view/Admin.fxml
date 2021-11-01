@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminController">
+   <top>
+      <VBox prefHeight="28.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Novo vozilo">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#automobilMenuItemAction" text="Automobil" />
+                              <MenuItem mnemonicParsing="false" onAction="#kombiMenuItemAction" text="Kombi" />
+                              <MenuItem mnemonicParsing="false" onAction="#motociklMenuItemAction" text="Motocikl" />
+                              <Menu mnemonicParsing="false" text="Policijska vozila">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" onAction="#policijskiAutomobilMenuItemAction" text="Automobil" />
+                                    <MenuItem mnemonicParsing="false" onAction="#policijskiKombiMenuItemAction" text="Kombi" />
+                                    <MenuItem mnemonicParsing="false" onAction="#policijskiMotociklMenuItemAction" text="Motocikl" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Sanitetska vozila">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#sanitetskiAutomobilMenuItem" text="Automobil" />
+                                    <MenuItem mnemonicParsing="false" onAction="#sanitetskiKombiMenuItemAction" text="Kombi" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Vatrogasna vozila">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#vatrogasniKombiMenuItemAction" text="Kombi" />
+                                 </items>
+                              </Menu>
+                          </items>
+                        </Menu>
+                    <MenuItem mnemonicParsing="false" onAction="#izadjiMenuItemAction" text="Izađi" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#izmijeniButtonAction" text="Izmijeni vozilo" />
+                    <MenuItem mnemonicParsing="false" onAction="#obrisiButtonAction" text="Obriši vozilo" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </children></VBox>
+   </top>
+   <left>
+      <VBox prefHeight="505.0" prefWidth="237.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <ComboBox fx:id="vozila" prefHeight="28.0" prefWidth="159.0" promptText="Izaverite tip vozila" />
+            <Button fx:id="dodajNovoVoziloButton" mnemonicParsing="false" onAction="#dodajNovoVoziloButtonAction" prefHeight="29.0" prefWidth="133.0" text="Dodaj novo vozilo" />
+            <Region prefHeight="51.0" prefWidth="274.0" />
+            <ComboBox fx:id="comboBox" onAction="#comboBoxAction" prefHeight="25.0" prefWidth="217.0" promptText="Izaberite platformu za prikaz" />
+            <Region prefHeight="36.0" prefWidth="237.0" VBox.vgrow="ALWAYS" />
+            <Label text="Selektovano vozilo" />
+            <ImageView fx:id="imageView" fitHeight="228.0" fitWidth="241.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></ImageView>
+            <Region prefHeight="26.0" prefWidth="249.0" VBox.vgrow="ALWAYS" />
+            <HBox alignment="BOTTOM_LEFT" prefHeight="32.0" prefWidth="274.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#izmijeniButtonAction" prefHeight="25.0" prefWidth="103.0" styleClass="button-edit" text="Izmijeni vozilo" />
+                  <Region prefHeight="25.0" prefWidth="63.0" />
+                  <Button mnemonicParsing="false" onAction="#obrisiButtonAction" prefHeight="25.0" prefWidth="98.0" styleClass="button-delete" text="Obrisi vozilo" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" top="5.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <StackPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="514.0" prefWidth="465.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableView" editable="true" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selectedItemAction" prefHeight="514.0" prefWidth="480.0">
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <columns>
+                  <TableColumn fx:id="nazivColumn" minWidth="-Infinity" prefWidth="103.0" text="Naziv" />
+                  <TableColumn fx:id="registarskiBrojColumn" minWidth="-Infinity" prefWidth="112.0" text="Registarski broj" />
+                  <TableColumn fx:id="brojSasijeColumn" minWidth="-Infinity" prefWidth="162.0" text="Broj Šasije" />
+                  <TableColumn fx:id="brojMotoraColumn" minWidth="-Infinity" prefWidth="99.0" text="Broj motora" />
+               </columns>
+            </TableView>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </StackPane>
+   </center>
+   <right>
+      <VBox prefHeight="510.0" prefWidth="260.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="text" editable="false" focusTraversable="false" prefHeight="251.0" prefWidth="255.0" styleClass="text-area" wrapText="true">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Bodoni MT Condensed Bold" size="17.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </opaqueInsets>
+            </TextArea>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </right>
+   <bottom>
+      <ButtonBar prefHeight="62.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="korisnickaApikacijaButton" mnemonicParsing="false" onAction="#korisnickaAplikacijaButtonAction" prefHeight="46.0" prefWidth="148.0" text="Korisnicka Aplikacija" />
+        </buttons>
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+</BorderPane>

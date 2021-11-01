@@ -1,0 +1,40 @@
+.root {
+	 -fx-background-color: linear-gradient(#FFFFFF, #F5FFFA);
+}
+
+.button {
+    -fx-text-fill: white;
+	-fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-color: #4682B4;
+}
+.button:focused {
+	-fx-border-color: #1E90FF;
+}
+.label{
+	-fx-font-size: 13px;
+}
+.label-notes {
+	-fx-text-fill: red;
+	-fx-font-size: 11px;
+}
+.button-delete {
+	-fx-background-color: #FF3333;
+}
+.button-edit {
+	-fx-background-color: #008000;
+}
+.combo-box {
+	-fx-background-color: #B0C4DE;
+	-fx-text-fill: black;
+	-fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.combo-box:focused {
+	-fx-border-color: #1E90FF;
+}
+.split-menu-button {
+	-fx-text-fill: black;
+	-fx-font-size: 12px;
+    -fx-font-weight: bold;
+}

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="604.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.KorisnikController">
+   <left>
+      <VBox prefHeight="518.0" prefWidth="259.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Minimalan broj vozila" />
+            <TextField fx:id="brojVozilaTextField" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="188.0" />
+            <Button fx:id="pokreniSimulacijuButton" mnemonicParsing="false" onAction="#pokreniSimulacijuButtonAction" prefHeight="46.0" prefWidth="142.0" text="Pokreni simulaciju" />
+            <Label fx:id="msgLabel" text="Simulacija zavrsena." visible="false" />
+            <Region prefHeight="53.0" prefWidth="259.0" />
+            <ComboBox fx:id="platformeComboBox" onAction="#platformeComboBoxAction" prefHeight="32.0" prefWidth="234.0" promptText="Izaberite platformu za prikaz" />
+            <Region prefHeight="75.0" prefWidth="348.0" />
+            <SplitMenuButton fx:id="menuButton" mnemonicParsing="false" prefHeight="29.0" prefWidth="180.0" text="Uvezi novo vozilo" visible="false">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#newAutomobilAction" text="Automobil" />
+                <MenuItem mnemonicParsing="false" onAction="#newKombiAction" text="Kombi" />
+                  <MenuItem mnemonicParsing="false" onAction="#newMotociklAction" text="Motocikl" />
+                  <MenuItem mnemonicParsing="false" onAction="#newPolicijskiAutomobilAction" text="Policijski automobil" />
+                  <MenuItem mnemonicParsing="false" onAction="#newPolicijskiKombiAction" text="Policijski kombi" />
+                  <MenuItem mnemonicParsing="false" onAction="#newPolicijskiMotociklAction" text="Policijski motocikl" />
+                  <MenuItem mnemonicParsing="false" onAction="#newSanitetskiAutomobilAction" text="Sanitetski automobil" />
+                  <MenuItem mnemonicParsing="false" onAction="#newSanitetskiKombiAction" text="Sanitetski kombi" />
+                  <MenuItem mnemonicParsing="false" onAction="#newVatrogasniKombiAction" text="Vatrogasni kombi" />
+              </items>
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </SplitMenuButton>
+            <Region prefHeight="263.0" prefWidth="302.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="5.0" top="10.0" />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <StackPane prefHeight="477.0" prefWidth="451.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <children>
+            <TextArea fx:id="textArea" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="485.0" prefWidth="469.0" styleClass="text-area" wrapText="true">
+               <font>
+                  <Font name="Bodoni MT Condensed Bold" size="32.0" />
+               </font>
+               <StackPane.margin>
+                  <Insets />
+               </StackPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextArea>
+         </children></StackPane>
+   </center>
+   <right>
+      <Region prefHeight="502.0" prefWidth="75.0" BorderPane.alignment="CENTER" />
+   </right>
+   <top>
+      <Region prefHeight="16.0" prefWidth="851.0" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
